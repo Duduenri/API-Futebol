@@ -1,6 +1,6 @@
 import requests
 
-# Sua chave de API da football-data.org
+# Chave
 API_CHAVE = 'a8882e2d8cf24f5492df823d1d92ffe2'
 URL = 'https://api.football-data.org/v4/'
 
