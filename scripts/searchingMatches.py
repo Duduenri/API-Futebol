@@ -4,24 +4,7 @@ import requests
 API_CHAVE = 'a8882e2d8cf24f5492df823d1d92ffe2'
 URL = 'https://api.football-data.org/v4/'
 
-# def time_id(nome_time):
-#     url = f'{URL}teams'
-#     headers = { #o headers é um DICIONARIOS, que contem os cabeçalhos HTTP, ele envia um requisição
-#         'X-Auth-Token': API_CHAVE
-#     }
-#     response = requests.get(url, headers=headers)
 
-#     if response.status_code == 200:
-#         times = response.json()['teams']
-#         for time in times:
-#             if nome_time.lower() in time['name'].lower():
-#                 return time['id']
-#         print(f'Time "{nome_time}" não encontrado.')
-#     else:
-#         print(f'Erro ao acessar a API: {response.status_code}')
-#     return None
-
-# def proximas_cinco_partidas(team_id)
 def mostrar_ligas():
     url = f'{URL}competitions'
     headers = { #o headers é um DICIONARIOS, que contem os cabeçalhos HTTP, ele envia um requisição
