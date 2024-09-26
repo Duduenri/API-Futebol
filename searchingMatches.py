@@ -24,10 +24,10 @@ URL = 'https://api.football-data.org/v4/'
 # def proximas_cinco_partidas(team_id)
 def mostrar_ligas():
     url = f'{URL}competitions'
-    headers = {
+    headers = { #o headers é um DICIONARIOS, que contem os cabeçalhos HTTP, ele envia um requisição
         'X-Auth-Token': API_CHAVE
     }
-    response = requests.get(url, headers=headers)
+    response = requests.get(url, headers=headers) #headers é usado para enviar cabeçalhos HTTP, requisição
 
     if response.status_code == 200:
         competicoes = response.json()['competitions']
@@ -43,17 +43,17 @@ def selecionar_liga():
         return None
     
     print("Ligas disponíveis:")
-    for i, liga in enumerate(ligas):
+    for i, liga in enumerate(ligas): #loop
         print(f"{i + 1}: {liga['name']} ({liga['code']})")
 
     try:
-        escolha = int(input("\nSelecione o número da liga: ")) - 1
+        escolha = int(input("\nSelecione o número da liga: ")) - 1 #como as opções apresentadas começam com 1, é necessario incluir o -1 para ajustar o indice
         if 0 <= escolha < len(ligas):
             return ligas[escolha]['id']
         else:
             print("Opção inválida.")
             return None
-    except ValueError:
+    except ValueError: #excessao, caso a operaçãp receba um argumento certo mas com valor inapropriado
         print("Entrada inválida. Por favor, insira um número.")
         return None
 
@@ -126,7 +126,7 @@ def pesquisar_time_e_mostrar_partidas(nome_time, id_liga):
                 print(f"{partida['utcDate']} - {partida['homeTeam']['name']} {partida['score']['fullTime']['home']} x {partida['score']['fullTime']['away']} {partida['awayTeam']['name']}")
 
 # testando a brincadeira
-if __name__ == "__main__":
+if __name__ == "__main__": #__name__ é uma condição para saber se o script esta sendo executado diretamente ou umportador
     #exibe as ligas e mostra uma
     liga_id = selecionar_liga()
     if liga_id:
