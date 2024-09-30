@@ -1,2 +1,4 @@
 teste.py
 node_modules
+.env
+prisma
