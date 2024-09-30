@@ -1,9 +1,15 @@
 const axios = require('axios'); //Axios é uma biblioteca para fazer requisição http
 const prompt = require('prompt-sync')();
+const cors = require('cors');
+
+const app = express();
+const PORT = 3002; // Escolha uma porta para o back-end
 
 // Chave da API
 const API_CHAVE = 'a8882e2d8cf24f5492df823d1d92ffe2';
 const URL = 'https://api.football-data.org/v4/';
+
+app.use(cors());
 
 async function mostrarLigas() { //async para funções assincronas
     const url = `${URL}competitions`;
