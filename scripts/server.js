@@ -10,13 +10,28 @@ app.use(cors());
 const API_CHAVE = 'a8882e2d8cf24f5492df823d1d92ffe2';
 const URL = 'https://api.football-data.org/v4/';
 
-// Função para obter times por liga
 const timesPorLiga = async (ligaId) => {
     try {
         const response = await axios.get(`${URL}competitions/${ligaId}/teams`, {
             headers: { 'X-Auth-Token': API_CHAVE }
         });
-        return response.data.teams;
+
+        // Mapear os times e adicionar o campo 'crest' para o logo
+        const timesComLogos = response.data.teams.map(team => ({
+            id: team.id,
+            name: team.name,
+            shortName: team.shortName,
+            tla: team.tla,
+            crest: team.crest, 
+            address: team.address,
+            website: team.website,
+            founded: team.founded,
+            clubColors: team.clubColors,
+            venue: team.venue,
+            runningCompetitions: team.runningCompetitions
+        }));
+
+        return timesComLogos; // Retorne o array de times com logos após o mapeamento
     } catch (error) {
         console.error('Erro ao buscar times da liga:', error.message);
         return null;
