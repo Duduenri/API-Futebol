@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import './Ligas.css'; // Certifique-se de criar um arquivo CSS para estilização
 
 const Ligas = () => {
   const [ligas, setLigas] = useState([]);
@@ -33,8 +34,8 @@ const Ligas = () => {
     }
   };
 
-  const handleTimeChange = async (event) => {
-    const timeId = event.target.value;
+  const handleTimeChange = async (timeId) => {
+    setTimeSelecionado(timeId);
 
     try {
       const response = await axios.get(`http://localhost:3002/times/${timeId}/partidas`);
@@ -59,14 +60,22 @@ const Ligas = () => {
       {ligaSelecionada && (
         <div>
           <h2>Times Disponíveis</h2>
-          <select onChange={handleTimeChange}>
-            <option value="">Selecione um time</option>
-            {times.map((time) => (
-              <option key={time.id} value={time.id}>
-                {time.name}
-              </option>
-            ))}
-          </select>
+          <div className="custom-select">
+            {times.length > 0 ? (
+              times.map((time) => (
+                <div
+                  key={time.id}
+                  className="custom-option"
+                  onClick={() => handleTimeChange(time.id)}
+                >
+                  <img src={time.crest} alt={`${time.name} logo`} className="team-logo" />
+                  <span>{time.name}</span>
+                </div>
+              ))
+            ) : (
+              <p>Nenhum time disponível.</p>
+            )}
+          </div>
         </div>
       )}
 
