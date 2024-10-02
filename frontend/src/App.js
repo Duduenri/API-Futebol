@@ -13,8 +13,6 @@ function App() {
             <header className="App-header">
                 <h1>Futebol Data</h1>
                 {!ligaId && <Ligas onSelectLiga={setLigaId} />}
-                {ligaId && !timeId && <Times ligaId={ligaId} onSelectTime={setTimeId} />}
-                {timeId && <Partidas timeId={timeId} />}
             </header>
         </div>
     );

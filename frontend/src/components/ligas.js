@@ -26,7 +26,7 @@ const Ligas = () => {
     setLigaSelecionada(ligaId);
 
     try {
-      const response = await axios.get(`http://localhost:3001/ligas/${ligaId}/times`);
+      const response = await axios.get(`http://localhost:3002/ligas/${ligaId}/times`);
       setTimes(response.data);
     } catch (error) {
       console.error('Erro ao buscar times:', error);
@@ -37,7 +37,7 @@ const Ligas = () => {
     const timeId = event.target.value;
 
     try {
-      const response = await axios.get(`http://localhost:3001/times/${timeId}/partidas`);
+      const response = await axios.get(`http://localhost:3002/times/${timeId}/partidas`);
       setPartidas(response.data);
     } catch (error) {
       console.error('Erro ao buscar partidas:', error);
