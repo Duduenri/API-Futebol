@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import './Ligas.css'; // Certifique-se de criar um arquivo CSS para estilização
+import './Ligas.css'; // Certifique-se de ter o CSS correto
 
 const Ligas = () => {
   const [ligas, setLigas] = useState([]);
   const [times, setTimes] = useState([]);
-  const [partidas, setPartidas] = useState([]);
+  const [partidas, setPartidas] = useState({ proximas: [], ultimas: [] });
   const [ligaSelecionada, setLigaSelecionada] = useState(null);
   const [timeSelecionado, setTimeSelecionado] = useState('');
 
@@ -79,29 +79,39 @@ const Ligas = () => {
         </div>
       )}
 
-      {partidas.proximas && (
+      {timeSelecionado && (
         <div>
-          <h2>Próximas 5 Partidas:</h2>
-          <ul>
-            {partidas.proximas.map((partida) => (
-              <li key={partida.id}>
-                {partida.utcDate} - {partida.homeTeam.name} vs {partida.awayTeam.name}
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+          <h2>Partidas para o Time Selecionado</h2>
 
-      {partidas.ultimas && (
-        <div>
-          <h2>Últimas 5 Partidas:</h2>
-          <ul>
-            {partidas.ultimas.map((partida) => (
-              <li key={partida.id}>
-                {partida.utcDate} - {partida.homeTeam.name} {partida.score.fullTime.home} x {partida.score.fullTime.away} {partida.awayTeam.name}
-              </li>
-            ))}
-          </ul>
+          {partidas.ultimas.length > 0 && (
+            <div>
+              <h3>Últimas 5 Partidas</h3>
+              <ul>
+                {partidas.ultimas.map((partida) => (
+                  <li key={partida.id}>
+                    {partida.utcDate} - {partida.homeTeam.name} {partida.score.fullTime.home} x {partida.score.fullTime.away} {partida.awayTeam.name}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {partidas.proximas.length > 0 && (
+            <div>
+              <h3>Próximas 5 Partidas</h3>
+              <ul>
+                {partidas.proximas.map((partida) => (
+                  <li key={partida.id}>
+                    {partida.utcDate} - {partida.homeTeam.name} vs {partida.awayTeam.name}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {partidas.ultimas.length === 0 && partidas.proximas.length === 0 && (
+            <p>Nenhuma partida disponível para este time.</p>
+          )}
         </div>
       )}
     </div>
