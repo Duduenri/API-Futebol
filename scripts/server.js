@@ -104,6 +104,18 @@ app.get('/ligas/:ligaId/times', async (req, res) => {
     }
 });
 
+// Função para formatar a data
+function formatarData(dataISO) {
+    const data = new Date(dataISO);
+    const dia = String(data.getDate()).padStart(2, '0');
+    const mes = String(data.getMonth() + 1).padStart(2, '0'); // Janeiro é 0!
+    const ano = data.getFullYear();
+    const horas = String(data.getHours()).padStart(2, '0');
+    const minutos = String(data.getMinutes()).padStart(2, '0');
+
+    return `${dia}/${mes}/${ano} ${horas}:${minutos}`;
+}
+
 // Função para buscar as próximas 5 partidas agendadas
 async function proximasCincoPartidas(timeId) {
     const url = `${URL}teams/${timeId}/matches?status=SCHEDULED&limit=5`;
@@ -111,7 +123,10 @@ async function proximasCincoPartidas(timeId) {
 
     try {
         const response = await axios.get(url, { headers });
-        return response.data.matches;
+        return response.data.matches.map(partida => ({
+            ...partida,
+            utcDate: formatarData(partida.utcDate) // Formata a data aqui
+        }));
     } catch (error) {
         console.error(`Erro ao acessar a API: ${error.response ? error.response.status : error.message}`);
         return null;
@@ -125,7 +140,10 @@ async function ultimasCincoPartidas(timeId) {
 
     try {
         const response = await axios.get(url, { headers });
-        return response.data.matches;
+        return response.data.matches.map(partida => ({
+            ...partida,
+            utcDate: formatarData(partida.utcDate) // Formata a data aqui
+        }));
     } catch (error) {
         console.error(`Erro ao acessar a API: ${error.response ? error.response.status : error.message}`);
         return null;
@@ -150,7 +168,6 @@ app.get('/times/:timeId/partidas', async (req, res) => {
         res.status(500).json({ message: 'Erro ao buscar partidas' });
     }
 });
-
 
 app.listen(PORT, () => {
     console.log(`Servidor rodando em http://localhost:${PORT}`);
