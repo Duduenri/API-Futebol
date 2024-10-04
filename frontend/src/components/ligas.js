@@ -89,7 +89,19 @@ const Ligas = () => {
               <ul>
                 {partidas.ultimas.map((partida) => (
                   <li key={partida.id}>
-                    {partida.utcDate} - {partida.homeTeam.name} {partida.score.fullTime.home} x {partida.score.fullTime.away} {partida.awayTeam.name}
+                    <img
+                      src={partida.homeTeam.crest}
+                      alt={`${partida.homeTeam.name} logo`}
+                      className="team-logo-small"
+                    />
+                    {partida.utcDate} - {partida.homeTeam.name}{' '}
+                    {partida.score.fullTime.home} x {partida.score.fullTime.away}{' '}
+                    {partida.awayTeam.name}
+                    <img
+                      src={partida.awayTeam.crest}
+                      alt={`${partida.awayTeam.name} logo`}
+                      className="team-logo-small"
+                    />
                   </li>
                 ))}
               </ul>
@@ -102,7 +114,17 @@ const Ligas = () => {
               <ul>
                 {partidas.proximas.map((partida) => (
                   <li key={partida.id}>
+                    <img
+                      src={partida.homeTeam.crest}
+                      alt={`${partida.homeTeam.name} logo`}
+                      className="team-logo-small"
+                    />
                     {partida.utcDate} - {partida.homeTeam.name} vs {partida.awayTeam.name}
+                    <img
+                      src={partida.awayTeam.crest}
+                      alt={`${partida.awayTeam.name} logo`}
+                      className="team-logo-small"
+                    />
                   </li>
                 ))}
               </ul>
