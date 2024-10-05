@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: rgb(103,83,92);
+    background: linear-gradient(90deg, rgba(103,83,92,1) 0%, rgba(122,132,144,1) 100%);
+    color: #fff;
+  }
+  
+  .nav-titulo {
+    font-family: 'Crimson Text', serif;
+    font-size: 1.3rem;
+  }
+
+  .titulo {
+    font-family: 'Crimson Text', serif;
+    font-size: 1.5rem;
+  }
+  .ti {
+    color: rgb(0, 47, 255); /* Altere para a cor desejada */
+    font-weight: bold; /* Adiciona negrito */
+}
+  
+  .nav-logos {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-logos a {
+    margin-left: 15px;
+  }
+  
+  .nav-icon {
+    width: 30px;
+    height: 30px;
+  }
+  

@@ -1,37 +1,110 @@
+/* Ligas.css */
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #ffdd00;
+}
+
+div {
+  text-align: center;
+}
+
+select {
+  width: 100%;
+  max-width: 400px;
+  margin: 0.5rem auto;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #1a1a1d;
+  color: #fff;
+  font-size: 1rem;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  appearance: none;
+}
+
 .custom-select {
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  max-height: 200px;
-  overflow-y: auto;
-  margin-top: 10px;
-  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
 }
 
 .custom-option {
-  display: flex;
-  align-items: center;
-  padding: 8px;
-  transition: background 0.2s;
+  background-color: #27292b;
+  color: #fff;
+  margin: 10px;
+  padding: 15px;
+  border-radius: 10px;
+  width: 150px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-align: center;
 }
 
 .custom-option:hover {
-  background-color: #f0f0f0;
-}
-
-.team-logo {
-  width: 30px; /* Ajuste conforme necessário */
-  height: 30px; /* Ajuste conforme necessário */
-  margin-right: 10px;
+  transform: translateY(-10px);
+  box-shadow: 0px 10px 20px rgba(255, 221, 0, 0.5);
 }
 
 .team-logo {
   width: 50px;
   height: 50px;
-  margin-right: 10px;
+  object-fit: contain;
+  margin-bottom: 10px;
 }
 
 .team-logo-small {
   width: 30px;
   height: 30px;
-  margin-right: 5px;
+  object-fit: contain;
+  margin: 0 10px;
+  vertical-align: middle;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: #1a1a1d;
+  margin: 10px auto;
+  padding: 15px;
+  border-radius: 10px;
+  width: 80%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffdd00;
+  font-size: 1rem;
+}
+
+li img {
+  margin: 0 10px;
+}
+
+p {
+  color: #f5f5f5;
+  font-style: italic;
+}
+
+.white-background {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1rem 0;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  color: #000; /* Mudar a cor do texto para preto */
 }

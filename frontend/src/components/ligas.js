@@ -47,18 +47,20 @@ const Ligas = () => {
 
   return (
     <div>
-      <h1>Ligas Disponíveis</h1>
-      <select onChange={handleLigaChange}>
-        <option value="">Selecione uma liga</option>
-        {ligas.map((liga) => (
-          <option key={liga.id} value={liga.id}>
-            {liga.name} ({liga.code})
-          </option>
-        ))}
-      </select>
+      <div className="white-background">
+        <h1>Ligas Disponíveis</h1>
+        <select onChange={handleLigaChange}>
+          <option value="">Selecione uma liga</option>
+          {ligas.map((liga) => (
+            <option key={liga.id} value={liga.id}>
+              {liga.name} ({liga.code})
+            </option>
+          ))}
+        </select>
+      </div>
 
       {ligaSelecionada && (
-        <div>
+        <div className="white-background">
           <h2>Times Disponíveis</h2>
           <div className="custom-select">
             {times.length > 0 ? (
