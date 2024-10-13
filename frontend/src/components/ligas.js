@@ -60,7 +60,7 @@ const Ligas = () => {
       </div>
 
       {ligaSelecionada && (
-        <div className="white-background">
+        <div className="times-background">
           <h2>Times Disponíveis</h2>
           <div className="custom-select">
             {times.length > 0 ? (
@@ -82,7 +82,7 @@ const Ligas = () => {
       )}
 
       {timeSelecionado && (
-        <div>
+        <div className='partidas'>
           <h2>Partidas para o Time Selecionado</h2>
 
           {partidas.ultimas.length > 0 && (
