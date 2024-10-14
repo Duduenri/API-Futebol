@@ -20,7 +20,7 @@
 
 // export default Nav;
 import React from 'react';
-import GitHubLogo from './imgs/GitHub.png';
+import GitHubLogo from './imgs/githubB.png';
 import './nav.css'; // Certifique-se de que o nome do arquivo corresponde ao nome no sistema de arquivos
 
 const Nav = () => {

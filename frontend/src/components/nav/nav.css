@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
-
 /* Estilos existentes para o header */
 header {
   background-image: linear-gradient(to right, #1a1a1d, #4e4e50); /* Gradiente de fundo */
@@ -34,10 +32,10 @@ header p {
 }
 
 .nav-titulo .ti {
-  color: #f1eceb;
+  color: #ff4500;
 }
 
 .nav-logos .nav-icon {
-  width: 30px;
-  height: 30px;
+  width: 50px; /* Aumenta a largura da logo */
+  height: 50px; /* Aumenta a altura da logo */
 }
