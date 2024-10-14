@@ -1,40 +1,41 @@
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background: rgb(103,83,92);
-    background: linear-gradient(90deg, rgba(103,83,92,1) 0%, rgba(122,132,144,1) 100%);
-    color: #fff;
-  }
-  
-  .nav-titulo {
-    font-family: 'Crimson Text', serif;
-    font-size: 1.3rem;
-  }
-
-  .titulo {
-    font-family: 'Crimson Text', serif;
-    font-size: 1.5rem;
-  }
-  .ti {
-    color: rgb(0, 47, 255); /* Altere para a cor desejada */
-    font-weight: bold; /* Adiciona negrito */
+/* Estilos existentes para o header */
+header {
+  background-image: linear-gradient(to right, #1a1a1d, #4e4e50); /* Gradiente de fundo */
+  color: #ffdd00; /* Cor do texto */
+  padding: 20px; /* Espaçamento interno */
+  text-align: center; /* Centraliza o texto */
+  font-family: 'Arial', sans-serif; /* Fonte personalizada */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+  border-radius: 10px; /* Bordas arredondadas */
 }
-  
-  .nav-logos {
-    display: flex;
-    align-items: center;
-  }
-  
-  .nav-logos a {
-    margin-left: 15px;
-  }
-  
-  .nav-icon {
-    width: 30px;
-    height: 30px;
-  }
-  
+
+header h1 {
+  font-size: 2.5rem; /* Tamanho da fonte do título */
+  margin: 0; /* Remove a margem padrão */
+}
+
+header p {
+  font-size: 1.2rem; /* Tamanho da fonte do parágrafo */
+  margin: 10px 0 0; /* Margem superior e inferior */
+}
+
+/* Estilos adicionais para o Nav */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-titulo .titulo {
+  font-size: 1.5rem;
+  color: #ffdd00;
+}
+
+.nav-titulo .ti {
+  color: #ff4500;
+}
+
+.nav-logos .nav-icon {
+  width: 50px; /* Aumenta a largura da logo */
+  height: 50px; /* Aumenta a altura da logo */
+}
