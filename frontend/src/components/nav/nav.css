@@ -24,6 +24,9 @@ header p {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 10px 20px; /* Espaçamento interno */
+  background-color: #333; /* Cor de fundo da navbar */
+  border-radius: 10px; /* Bordas arredondadas */
 }
 
 .nav-titulo .titulo {
@@ -31,11 +34,25 @@ header p {
   color: #ffdd00;
 }
 
-.nav-titulo .ti {
-  color: #ff4500;
+.nav-titulo .titulo .ti {
+  color: #ffffff; /* Cor branca para o texto "TI" */
 }
 
-.nav-logos .nav-icon {
-  width: 50px; /* Aumenta a largura da logo */
-  height: 50px; /* Aumenta a altura da logo */
+.nav-logos {
+  display: flex;
+  align-items: center;
+}
+
+.nav-logos a {
+  margin-left: 10px; /* Espaçamento entre os ícones */
+}
+
+.nav-icon {
+  width: 30px; /* Largura do ícone */
+  height: 30px; /* Altura do ícone */
+  transition: transform 0.3s; /* Transição suave para o efeito hover */
+}
+
+.nav-icon:hover {
+  transform: scale(1.1); /* Aumenta o ícone ao passar o mouse */
 }
