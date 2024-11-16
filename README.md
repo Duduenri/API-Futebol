@@ -1,7 +1,3 @@
-<p align="center">Projeto de estudos gerado a partir dos vídeos do <a href="https://youtube.com/angelogluz" target="blank">Canal do Youtube</a>.</p>
-<p align="center">
-<a href="https://github.com/Duduenri/API-Futebol"><img src="https://img.shields.io/github/stars/angelogluz/NestJS-Nestjs-query" alt="Stars" /></a>
-
 ## Sobre o Projeto
 
 Este projeto é uma API que utiliza a [API de Dados de Futebol](https://www.football-data.org/) para obter informações sobre ligas, times, e partidas de futebol. A API fornece as últimas 5 partidas finalizadas e as próximas 5 partidas agendadas para cada time.
